@@ -1,0 +1,58 @@
+﻿<Window x:Class="Planes.UI.FlightsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Planes.UI"
+        mc:Ignorable="d"
+        Loaded="Window_Loaded"
+        Title="Flights" Height="450" Width="800">
+    <Grid Name="mastergrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Arrivals" Grid.Column="0" Grid.Row="0" FontSize="30"  HorizontalAlignment="Center"/>
+        <TextBlock  Text="Departures" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" FontSize="30"  HorizontalAlignment="Center"/>
+        <Grid x:Name="arrivalGrid" Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Flight ID" Grid.Row="0" Grid.Column="0" FontSize="16"/>
+            <Label Content="Date" Grid.Row="0" Grid.Column="1" FontSize="16"/>
+            <Label Content="Plane ID" Grid.Row="0" Grid.Column="2" FontSize="16"/>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+        </Grid>
+        <ListView Name="arrivalListView" Grid.Row="1" Margin="0px 40px 0px 0px" />
+        <ListView Name="depListView" Grid.Column="1" Grid.Row="1" Margin="0px 40px 0px 0px" />
+        <Button  Name="backBtn" Content="Go back" Grid.Column="1" Margin="10" Width="50" HorizontalAlignment="Right" Click="BackBtn_Click"/>
+        <Grid x:Name="departureGrid" Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="9*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Flight ID" Grid.Row="0" Grid.Column="0" FontSize="16"/>
+            <Label Content="Date" Grid.Row="0" Grid.Column="1" FontSize="16"/>
+            <Label Content="Plane ID" Grid.Row="0" Grid.Column="2" FontSize="16"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
+</Window>
