@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Planes.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Planes.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Flight">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FlightId" type="xs:int" />
+      <xs:element minOccurs="0" name="IsArrival" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Plane" nillable="true" type="tns:Plane" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Flight" nillable="true" type="tns:Flight" />
+  <xs:complexType name="Plane">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="StartingStationID" type="xs:int" />
+      <xs:element minOccurs="0" name="TimeInterval" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Plane" nillable="true" type="tns:Plane" />
+  <xs:complexType name="ArrayOfFlight">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Flight" nillable="true" type="tns:Flight" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFlight" nillable="true" type="tns:ArrayOfFlight" />
+</xs:schema>
